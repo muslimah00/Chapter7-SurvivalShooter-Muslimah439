@@ -4,30 +4,33 @@ using System.Collections;
 public class EnemyMovement : MonoBehaviour
 {
     Transform player;
-    //PlayerHealth playerHealth;
-    //EnemyHealth enemyHealth;
+    float playerHealth = 100; //mus ini tuh dia harusnya nyambung sama kode selanjutnya dari playerhealth.cs
+    float enemyHealth = 100; //sama ini juga. jadi sementara di buat aja nilainya buat ngakalin di if
     UnityEngine.AI.NavMeshAgent nav;
 
 
-    private void Awake ()
+    void Awake ()
     {
+        //Cari game object dengan tag player
         player = GameObject.FindGameObjectWithTag ("Player").transform;
 
-        //playerHealth = player.GetComponent <PlayerHealth> ();
-        //enemyHealth = GetComponent <EnemyHealth> ();
+        // playerHealth = player.GetComponent <PlayerHealth> ();
+        // enemyHealth = GetComponent <EnemyHealth> ();
         nav = GetComponent <UnityEngine.AI.NavMeshAgent> ();
     }
 
 
     void Update ()
     {
-        //if (enemyHealth.currentHealth > 0 && playerHealth.currentHealth > 0)
-        //{
+        print(enemyHealth);
+        print(playerHealth);
+        if (enemyHealth > 0 && playerHealth > 0)
+        {
             nav.SetDestination (player.position);
-        //}
-        //else
-        //{
-        //    nav.enabled = false;
-        //}
+        }
+        else
+        {
+           nav.enabled = false;
+        }
     }
 }
