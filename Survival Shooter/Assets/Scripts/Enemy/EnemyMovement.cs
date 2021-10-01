@@ -4,8 +4,12 @@ using System.Collections;
 public class EnemyMovement : MonoBehaviour
 {
     Transform player;
-    float playerHealth = 100; //mus ini tuh dia harusnya nyambung sama kode selanjutnya dari playerhealth.cs
-    float enemyHealth = 100; //sama ini juga. jadi sementara di buat aja nilainya buat ngakalin di if
+    PlayerHealth playerHealth;
+    EnemyHealth enemyHealth;
+
+    //float playerHealth = 100; //nyambung sama kode selanjutnya dari playerhealth.cs
+    //float enemyHealth = 100; //sementara di buat nilainya buat ngakalin di if
+
     UnityEngine.AI.NavMeshAgent nav;
 
 
@@ -14,17 +18,17 @@ public class EnemyMovement : MonoBehaviour
         //Cari game object dengan tag player
         player = GameObject.FindGameObjectWithTag ("Player").transform;
 
-        // playerHealth = player.GetComponent <PlayerHealth> ();
-        // enemyHealth = GetComponent <EnemyHealth> ();
+        playerHealth = player.GetComponent <PlayerHealth> ();
+        enemyHealth = GetComponent <EnemyHealth> ();
         nav = GetComponent <UnityEngine.AI.NavMeshAgent> ();
     }
 
 
     void Update ()
     {
-        print(enemyHealth);
-        print(playerHealth);
-        if (enemyHealth > 0 && playerHealth > 0)
+        // print(enemyHealth);
+        // print(playerHealth);
+        if (enemyHealth.currentHealth > 0 && playerHealth.currentHealth> 0)
         {
             nav.SetDestination (player.position);
         }
