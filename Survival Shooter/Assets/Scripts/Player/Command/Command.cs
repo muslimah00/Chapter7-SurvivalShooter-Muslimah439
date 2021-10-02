@@ -11,11 +11,11 @@
         PlayerMovement playerMovement;
         float h, v;
 
-        public MoveCommand(PlayerMovement _playerMovement, float _h, float _v)
+        public MoveCommand(PlayerMovement playerMovement, float h, float v)
         {
-            this.playerMovement = _playerMovement;
-            this.h = _h;
-            this.v = _v;
+            this.playerMovement = playerMovement;
+            this.h = h;
+            this.v = v;
         }
 
         //Trigger perintah movement
@@ -40,9 +40,9 @@
 
         PlayerShooting playerShooting;
 
-        public ShootCommand(PlayerShooting _playerShooting)
+        public ShootCommand(PlayerShooting playerShooting)
         {
-            playerShooting = _playerShooting;
+            this.playerShooting = playerShooting;
         }
 
         public override void Execute()
@@ -53,7 +53,7 @@
 
         public override void UnExecute()
         {
+
         }
     }
 }
-
