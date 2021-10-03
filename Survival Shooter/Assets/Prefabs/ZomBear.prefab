@@ -15,7 +15,10 @@ GameObject:
   - component: {fileID: 13500000}
   - component: {fileID: 19500000}
   - component: {fileID: 8200000}
-  m_Layer: 9
+  - component: {fileID: 1296295101981545264}
+  - component: {fileID: 6924016018221080989}
+  - component: {fileID: 6424359733913248988}
+  m_Layer: 10
   m_Name: ZomBear
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -49,7 +52,7 @@ Animator:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: c236aa7ad6dcabe47abc7d2cf903ae71, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 11320b530549dd242aaaf7b02dbef7f3, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -220,6 +223,49 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1296295101981545264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e15099f5ee559584089d5851df572def, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBetweenAttacks: 0.5
+  attackDamage: 10
+--- !u!114 &6924016018221080989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94f6618a0da65fa45b24d5105d5d8422, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6424359733913248988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9b9d14572410594cb85d40eedfb150c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 100
+  currentHealth: 0
+  sinkSpeed: 2.5
+  scoreValue: 10
+  deathClip: {fileID: 8300000, guid: 62366b8d2c37a49dca550841c741317f, type: 3}
 --- !u!1 &100002
 GameObject:
   m_ObjectHideFlags: 0
@@ -230,7 +276,7 @@ GameObject:
   m_Component:
   - component: {fileID: 400002}
   - component: {fileID: 13700000}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Zombear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -313,7 +359,7 @@ GameObject:
   - component: {fileID: 400004}
   - component: {fileID: 19800000}
   - component: {fileID: 19900000}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: DeathParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5051,7 +5097,7 @@ GameObject:
   - component: {fileID: 400006}
   - component: {fileID: 19800002}
   - component: {fileID: 19900002}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HitParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9806,7 +9852,7 @@ GameObject:
   m_Component:
   - component: {fileID: 437982}
   - component: {fileID: 10832232}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}

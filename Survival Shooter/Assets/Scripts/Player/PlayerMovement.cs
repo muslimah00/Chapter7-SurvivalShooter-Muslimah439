@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     //Method player dapat berjalan
-    void Move(float h, float v)
+    public void Move(float h, float v)
     {
         //Set nilai x dan y
         movement.Set(h, 0f, v);
@@ -71,7 +71,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void Animating(float h, float v)
+    public void Animating(float h, float v)
     {
         bool walking = h != 0f || v != 0f;
         anim.SetBool("IsWalking", walking);

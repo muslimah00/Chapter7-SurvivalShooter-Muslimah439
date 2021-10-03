@@ -85,6 +85,9 @@
      <Compile Include="Assets\Scripts\Managers\ScoreManager.cs" />
      <Compile Include="Assets\Scripts\Player\Command\Command.cs" />
      <Compile Include="Assets\Scripts\Player\Command\InputHandler.cs" />
+     <Compile Include="Assets\Scripts\Player\Command\MoveCommand.cs" />
+     <Compile Include="Assets\Scripts\Player\Command\ShootCommand.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerDetector.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerHealth.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerShooting.cs" />

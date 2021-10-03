@@ -1,15 +1,13 @@
-﻿using UnityEngine;
+﻿using UnityEngine.UI;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameOverManager : MonoBehaviour
 {
-    public PlayerHealth playerHealth;       
-    public float restartDelay = 5f;            
+    public Text warningText;
+    public PlayerHealth playerHealth;
 
-
-    Animator anim;                          
-    float restartTimer;                    
-
+    Animator anim;                 
 
     void Awake()
     {
@@ -21,14 +19,14 @@ public class GameOverManager : MonoBehaviour
     {
         if (playerHealth.currentHealth <= 0)
         {
+            print("finish");
             anim.SetTrigger("GameOver");
-
-            restartTimer += Time.deltaTime;
-
-            if (restartTimer >= restartDelay)
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            }
         }
+    }
+
+    public void ShowWarning(float enemyDistance)
+    {
+        warningText.text = string.Format("! {0} m",Mathf.RoundToInt(enemyDistance));
+        anim.SetTrigger("Warning");
     }
 }

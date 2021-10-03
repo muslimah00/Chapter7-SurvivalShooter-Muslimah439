@@ -25,15 +25,13 @@ public class PlayerShooting : MonoBehaviour
         gunLine = GetComponent<LineRenderer>();
         gunAudio = GetComponent<AudioSource>();
         gunLight = GetComponent<Light>();
-        //faceLight = transform.GetChild(0).GetComponent<Light>();
     }
 
     void Update()
     {
         timer += Time.deltaTime;
 
-        //if (Input.GetButton("Fire1") && timer >= timeBetweenBullets)
-        if(Input.GetButton ("Fire1") && timer >= timeBetweenBullets && Time.timeScale != 0)
+        if (Input.GetButton("Fire1") && timer >= timeBetweenBullets)
         {
             Shoot();
         }
